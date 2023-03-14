@@ -1,0 +1,92 @@
+
+.card{
+    
+
+    min-width: 400px;
+    .card-head{
+       
+        border-bottom: none;
+        display: flex;
+        align-items: center;
+    }
+    .card-body{
+        
+        display: flex;
+        align-items: center;
+       
+    }
+}
+.fit-content{
+    
+    width: fit-content;
+    
+    
+}
+.positonOnPage{
+    width: 100%;
+}
+.paddingTopLeftBottom{
+    padding: 1rem 1rem 1rem 0;
+}
+.doubleCardInARow{
+    width: 100%;
+    border-top: 1px solid #edf1f7;
+    
+    
+}
+.rowPosition{
+    display: flex;
+    flex-direction: row;
+}
+a{
+    padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+    font-size: 13px;
+}
+.editIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    cursor: pointer;
+}
+p{
+    margin: 0;
+}
+.saveButton{
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: white;
+    padding: 1rem;
+    color: green;
+}
+.cancelButton{
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: white;
+    padding: 1rem;
+    color: red;
+}
+textarea{
+    
+   width: 100%;
+   height: auto;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+   
+    padding: 0.5rem 0 0 0.5rem;
+}
+
+.btnFileUpload{
+    margin: 1rem 1rem 1rem 1.5rem;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 4px;
+    border: 0.2px solid black;
+}
+

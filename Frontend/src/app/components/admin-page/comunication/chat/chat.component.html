@@ -1,0 +1,51 @@
+<!--<div class="rowPosition center" style="display: flex;">
+    <app-customers style="width:15%" (selectedConversation)="onSelectedConversation($event)"></app-customers>
+    <app-message style="width:40%" [customer]="selectedConversation"></app-message>
+    <app-about-customers style="width:25%" [customer]="selectedConversation"></app-about-customers>
+</div> -->
+  
+<h1 *ngIf="!clickedOnCustomer" >Narudžbe</h1>
+<div class="container gap-small "  *ngIf="!clickedOnCustomer">
+   
+
+    
+       
+        <app-filters style="width:20%" (filterSelection)="onFilterSelected($event,0)" [selectedIndex]="selectedFilterIndex"  [customer]="selectedConversation"></app-filters>
+        
+    <div class="separationLine">
+
+    </div>
+
+        <div class="columnPosition ">
+
+    
+            <div class="navBar">
+                <div class="rowPosition verticalCenter fullHeight gap-small">
+                    <div class="iconDiv horisontalCenter ">
+                        <input type="checkbox" class="checkBox">
+                    </div>
+                    <div class="IDDiv horisontalCenter">
+                        <p class="removeMargin bold ">ID</p>
+                    </div>
+                    <div class="SubjectDiv ">
+                        <p class="removeMargin bold ">Naslov</p>
+                    </div>
+                    <div class="CustomerDiv ">
+                        <p class="removeMargin bold ">Naručitelj</p>
+                    </div>
+                    <div class="TicketDiv horisontalCenter">
+                        <p class="removeMargin bold ">Status Narudžbe</p>
+                    </div>
+                    <div class="RequestedDiv horisontalCenter">
+                        <p class="removeMargin bold ">Vrijeme</p>
+                    </div>
+                </div>
+            </div>
+            <app-customers [filter]="filterSelected" (selectedConversation)="onSelectedConversation($event)" ></app-customers>
+            
+        </div>
+    
+    
+</div>
+
+<app-message [customer]="selectedConversation" (backClicked)="onBackClicked()"></app-message>

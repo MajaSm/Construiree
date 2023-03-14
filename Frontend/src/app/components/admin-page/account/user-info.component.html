@@ -1,0 +1,144 @@
+
+<h1>About {{company.companyName}}</h1>
+
+    
+    
+<div class="card">
+    <div class="card-head border-bottom"> Description: </div>
+    <div class="rowPosition">
+    <div class="card-body">
+        <p *ngIf="!editMode[6]" >{{company.description}}</p>
+        <textarea *ngIf="editMode[6]" #descriptionInput  [style.height]="getHeight(descriptionInput)" 
+        [(ngModel)]="company.description">{{company.description}}</textarea>
+    </div>
+    <i class="fa fa-edit editIcon" (click)="enableEditMode(6)"></i>
+    <button class="saveButton" *ngIf="editMode[6]" (click)="saveChanges(6)"><i class="fa fa-check" aria-hidden="true"></i>
+    </button>
+    <button class="cancelButton" *ngIf="editMode[6]" (click)="cancelChanges(6)"><i class="fa fa-times" aria-hidden="true"></i>
+    </button>
+    </div>
+</div>
+
+<div class="card fit-content">
+    <div class="rowPosition">
+        <div class="card-head "> Price List:</div>
+        <div class="card-body paddingTopLeftBottom">
+            <p *ngIf="!editMode[5]">{{company.email}}</p>
+            <textarea *ngIf="editMode[5]" #emailInput>{{company.email}}</textarea>
+        </div>
+        
+    </div>
+
+    <div class="doubleCardInARow">
+        <input type="file" #file name="files" id="files" style="display:none;" multiple >
+        <button type="button" class="btnFileUpload" (click)="file.click()">Choose file</button>
+    </div>
+</div>
+
+<div>
+    <div class="card fit-content">
+        <div class="rowPosition">
+            <div class="card-head"> Name: </div>
+            <div class="card-body paddingTopLeftBottom ">
+                <p *ngIf="!editMode[0]">{{company.name}}</p>
+                <textarea *ngIf="editMode[0]"  #nameInput>{{company.name}}</textarea>
+            </div>
+            <i class="fa fa-edit editIcon" (click)="enableEditMode(0)"></i>
+            <button class="saveButton" *ngIf="editMode[0]" (click)="saveChanges(0)"><i class="fa fa-check" aria-hidden="true"></i>
+            </button>
+            <button class="cancelButton" *ngIf="editMode[0]" (click)="cancelChanges(0)"><i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+    
+        <div class="doubleCardInARow fit-content">
+            <div class="rowPosition">
+                <div class="card-head"> Surname: </div>
+                <div class="card-body paddingTopLeftBottom">
+                    <p *ngIf="!editMode[1]">{{company.surname}}</p>
+                    <textarea *ngIf="editMode[1]" #surnameInput>{{company.surname}}</textarea>
+                </div>
+                <i class="fa fa-edit editIcon" (click)="enableEditMode(1)"></i>
+                <button class="saveButton" *ngIf="editMode[1]" (click)="saveChanges(1)"><i class="fa fa-check" aria-hidden="true"></i>
+                </button>
+                <button class="cancelButton" *ngIf="editMode[1]" (click)="cancelChanges(1)"><i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card fit-content">
+        <div class="rowPosition">
+            <div class="card-head"> Address: </div>
+            <div class="card-body paddingTopLeftBottom">
+                <p *ngIf="!editMode[2]">{{company.address}}</p>
+                <textarea *ngIf="editMode[2]" #companyAddressInput>{{company.address}}</textarea>
+            </div>
+            <i class="fa fa-edit editIcon" (click)="enableEditMode(2)"></i>
+            <button class="saveButton" *ngIf="editMode[2]" (click)="saveChanges(2)"><i class="fa fa-check" aria-hidden="true"></i>
+            </button>
+            <button class="cancelButton" *ngIf="editMode[2]" (click)="cancelChanges(2)"><i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="card fit-content">
+        <div class="rowPosition">
+            <div class="card-head"> Company name: </div>
+            <div class="card-body paddingTopLeftBottom">
+                <p *ngIf="!editMode[3]">{{company.companyName}}</p>
+                <textarea *ngIf="editMode[3]" #companyNameInput>{{company.companyName}}</textarea>
+            </div>
+            <i class="fa fa-edit editIcon" (click)="enableEditMode(3)"></i>
+            <button class="saveButton" *ngIf="editMode[3]" (click)="saveChanges(3)"><i class="fa fa-check" aria-hidden="true"></i>
+            </button>
+            <button class="cancelButton" *ngIf="editMode[3]" (click)="cancelChanges(3)"><i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="card fit-content">
+        <div class="rowPosition">
+            <div class="card-head"> Company OIB: </div>
+            <div class="card-body paddingTopLeftBottom">
+                <p *ngIf="!editMode[4]">{{company.companyOIB}}</p>
+                <textarea *ngIf="editMode[4]" #companyOIBInput>{{company.companyOIB}}</textarea>
+            </div>
+            <i class="fa fa-edit editIcon" (click)="enableEditMode(4)"></i>
+            <button class="saveButton" *ngIf="editMode[4]" (click)="saveChanges(4)"><i class="fa fa-check" aria-hidden="true"></i>
+            </button>
+            <button class="cancelButton" *ngIf="editMode[4]" (click)="cancelChanges(4)"><i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="card fit-content">
+        <div class="rowPosition">
+            <div class="card-head"> E-mail: </div>
+            <div class="card-body paddingTopLeftBottom">
+                <p *ngIf="!editMode[5]">{{company.email}}</p>
+                <textarea *ngIf="editMode[5]" #emailInput>{{company.email}}</textarea>
+            </div>
+            
+        </div>
+    
+        <div class="doubleCardInARow">
+            <a href="">Change email</a>
+        </div>
+    </div>
+
+    <div class="card fit-content">
+        <div class="rowPosition">
+            <div class="card-head"> E-mail: </div>
+            <div class="card-body paddingTopLeftBottom">
+                <p *ngIf="!editMode[5]">{{company.email}}</p>
+                <textarea *ngIf="editMode[5]" #emailInput>{{company.email}}</textarea>
+            </div>
+            
+        </div>
+    
+        <div class="doubleCardInARow">
+            <a href="">Change email</a>
+        </div>
+    </div>
+</div>
+

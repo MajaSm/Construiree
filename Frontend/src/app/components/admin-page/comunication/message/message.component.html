@@ -1,0 +1,103 @@
+<!--<div class="center">
+    <div class="card ">
+        <div class="card-head">
+            <h5>Open Converstions</h5>
+        </div>
+        <div class="card-body border" *ngFor="let customer of customers">
+            <p>
+                {{customer.name}} {{customer.surname}}
+            </p>
+        </div>
+    </div>
+</div>-->
+<!--<div class="container"    *ngIf="customer" >
+    
+    <div class="messages" >
+        <div class="messagesContainer">
+           
+            <div  class="messages-inner-body columnPosition">
+                <div class="navBar">
+                    <div class="buttons">
+                        <button class="button circleButton " (click)="onBackClicked()"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+                    </div>
+                    
+                </div>
+                <div class="rowPosition">
+                    <div class="">
+                        <div class="message">
+                            <div class="chat">
+                                <div *ngFor="let message of customer.message" >
+                                    <p>{{ message }}</p>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="buttonAndTextarea rowPosition">
+                            <textarea class="textarea" placeholder="Type a message..."></textarea>
+                            <div class="divButtonSend">
+                                <button class="buttonSend">
+                                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                                
+                        </div>
+                    </div>
+
+                </div>
+                <div class="about-customer">
+                
+                </div>
+                
+                
+            </div>
+            
+            
+        </div>
+
+
+
+    </div>
+</div>-->
+<div class="container"    *ngIf="customer" >
+
+    <div class="navBar">
+        <div class="buttons">
+            <button class="button circleButton " (click)="onBackClicked()"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+    </div>
+
+   
+
+
+    <div class="rowPosition gap-small">
+
+        <app-about-customers style="width:50%" [customer] ="customer" ></app-about-customers>
+
+        <div class="chat margin-small">
+            <div class="message columnPosition">
+                <div *ngFor="let message of customer.message" >
+                    <p>{{ message }}</p>
+                </div>
+            </div>
+            <div class="buttonAndTextarea rowPosition">
+                <textarea class="textarea" placeholder="Type a message..."></textarea>
+                <div class="divButtonSend">
+                    <button class="buttonSend">
+                        <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                    </button>
+                </div>
+                    
+            </div>
+        </div>
+          
+     
+       
+   
+       
+        
+         
+        
+    </div>
+
+</div>

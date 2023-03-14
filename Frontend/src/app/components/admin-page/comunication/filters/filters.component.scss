@@ -1,0 +1,97 @@
+.filterDiv{
+    display: flex;
+    height: 100%;
+    height: 40px;
+}
+.nameOfFilters{
+    height:50px;
+    width:100%;
+    cursor: pointer;
+    display: flex;
+}
+.newRequest:hover,.isNewRequestClicked{
+    background: var(--color-blue);
+    transition:0.5s;
+    .nameOfFilters{
+        color: white;
+        transition:0.2s;
+    }
+    .iconOfTicket{
+        background: white;
+        transition:0.5s;
+        color: black;
+    }
+}
+
+.inPending:hover,.isPendingClicked{
+    background: var(--color-orange);
+    transition:0.5s;
+    .nameOfFilters{
+        color: white;
+        transition:0.2s;
+    }
+    .iconOfTicket{
+        background: white;
+        transition:0.5s;
+        color: black;
+    }
+}
+.approved:hover,.isApprovedClicked{
+    background: var(--color-green);
+    transition:0.5s;
+    .nameOfFilters{
+        color: white;
+        transition:0.2s;
+    }
+    .iconOfTicket{
+        background: white;
+        transition:0.5s;
+        color: black;
+    }
+}
+.denied:hover,.isDeniedClicked{
+    background: var(--color-red);
+    transition:0.5s;
+    .nameOfFilters{
+        color: white;
+        transition:0.2s;
+    }
+    .iconOfTicket{
+        background: white;
+        transition:0.5s;
+        color: black;
+    }
+}
+
+.resetFilters:hover{
+    color: rgb(6, 119, 25);
+    transition:0.2s;
+}
+.iconDiv{
+    width: 20%;
+    height: 50px;
+    cursor: pointer;
+    padding-right: 1rem;
+}
+.headerForFilters{
+    width: 100%;
+}
+.resetFilters{
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 1rem;
+}
+.spinner{
+    background-color: var(--color-orange);
+}
+.arrow{
+    background-color: var(--color-blue);
+}
+.check{
+    background-color: var(--color-green);
+}
+.times{
+    background-color: var(--color-red);
+}

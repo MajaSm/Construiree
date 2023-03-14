@@ -1,0 +1,54 @@
+<div class="container margin-small">
+   
+    <div class="aboutCustomer padding-small ">
+        <div class="rowPosition gap-small ">
+            <div class="IDDiv columnPosition">
+                <p class="bold">ID:</p><p>{{customer.id}}</p>
+            </div>
+            <div class="SubjectDiv columnPosition">
+                <p class="bold">Naslov:</p><p>{{customer.subject}}</p>
+            </div>
+            <div class="TicketDiv columnPosition">
+                <p class="bold">Status:</p><p>{{customer.ticket}}</p>
+            </div>
+            <div class="RequestedDiv columnPosition">
+                <p class="bold">Vrijeme:</p><p>{{customer.requestedTime}}</p>
+            </div>
+        </div>
+       <div class="line margin-bottom-small">
+
+       </div>
+
+        <div class="rowPosition">
+            <p class="bold">Ime: </p><p class="left-padding">{{customer.name}}</p>
+        </div>
+        <div class="rowPosition">
+            <p class="bold">Prezime: </p><p class="left-padding">{{customer.surname}}</p>
+        </div>
+        <div class="rowPosition">
+            <p class="bold">Adresa: </p><p class="left-padding">{{customer.address}}</p>
+        </div>
+        <div class="rowPosition">
+            <p class="bold">E-mail: </p><p class="left-padding">{{customer.email}}</p>
+        </div>
+        <div class="rowPosition">
+            <p class="bold">Broj mobitela: </p><p class="left-padding">{{customer.phone}}</p>
+        </div>
+       
+        <div class="line margin-bottom-small">
+
+        </div>
+
+        <div class="trackingContainer">
+            <div class="rowPosition">
+                <p class="bold">Narudžba za datum:</p><p class="left-padding">{{customer.dateForDelivery}}</p>
+            </div>
+            <ul class="progressbar">
+                <li [ngClass]="{'active': isActive[0] }" (click)="onClickTracking(0)" >Odobreno</li>
+                <li [ngClass]="{'active': isActive[1] }" (click)="onClickTracking(1)" >Priprema</li>
+                <li [ngClass]="{'active': isActive[2] }" (click)="onClickTracking(2)" >Na putu</li>
+                <li [ngClass]="{'active': isActive[3] }" (click)="onClickTracking(3)" >Dostavljeno</li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+.IDDiv{
+    width: 10%;
+    display: flex;
+}
+.iconDiv{
+    width: 5%;
+    height: 100%;
+    display: flex;
+}
+
+.SubjectDiv{
+    width: 25%;
+}
+.TicketDiv{
+    width: 20%;
+    display: flex;
+    
+}
+.RequestedDiv{
+    width: 20%;
+    display: flex;
+}
+.CustomerDiv{
+    width: 20%;
+}
+
+.line{
+    width: 100%;
+    border-bottom: 1px solid var(--primary-color);
+}

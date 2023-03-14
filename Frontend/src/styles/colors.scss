@@ -1,0 +1,62 @@
+:root
+{
+    --light-color: white;
+    --dark-color: rgba(124, 124, 124);
+    --primary-color: #d0652d;
+    --primary-color-alternative: #aa8e7f;
+    --color-green: rgb(145, 219, 130);
+    --color-blue: rgb(115, 169, 252);
+    --color-orange: rgb(255, 179, 92);
+    --color-red: rgb(255, 92, 92);
+    --color-for-chat: rgb(252, 249, 249);
+    --sideNav-color:#494c4d;
+    --customers-color:rgb(236, 234, 230);
+    --containerForCustomers-color:rgb(255, 255, 255);
+   
+    
+}
+.whiteColor{
+    color: var(--light-color)
+}
+.bg-color-green{
+    background-color: var(--color-green);
+}
+.color-green{
+    color: var(--color-green);
+}
+
+.bg-color-blue{
+    background-color: var(--color-blue);
+}
+
+.color-blue{
+    color: var(--color-blue);
+}
+
+.bg-color-orange{
+    background-color: var(--color-orange);
+}
+
+.color-orange{
+    color: var(--color-orange);
+}
+
+.bg-color-red{
+    background-color: var(--color-red);
+}
+
+.color-red{
+    color: var(--color-red);
+}
+.p-letter{
+    background-color: var(--color-orange);
+}
+.n-letter{
+    background-color: var(--color-blue);
+}
+.o-letter{
+    background-color: var(--color-green);
+}
+.d-letter{
+    background-color: var(--color-red);
+}

@@ -1,0 +1,38 @@
+<div class="filterDiv   verticalCenter">
+ 
+        <div class="rowPosition headerForFilters">
+            <p class="removeMargin bold  padding-small-left">Filter</p>
+            <p class="removeMargin bold  resetFilters" (click)="resetFilter()" (click)="filterSelection.emit('resetFilter')">Resetiraj filter</p>
+        </div>
+      
+   
+   
+        
+</div>
+<input type="text" placeholder="Search customers">
+<div class="columnPosition ">
+    <div class="rowPosition border newRequest"[ngClass]="{'isNewRequestClicked': isActive[0] } " (click)="onDivClick(0)" (click)="filterSelection.emit('newRequest')">
+        <p class="removeMargin bold   nameOfFilters verticalCenter padding-small-left color-blue"> Novi Zahtjev</p>
+        <div class="iconDiv horisontalCenter  verticalCenter">
+            <button class="iconOfTicket arrow"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+        </div>
+    </div>
+    <div class="rowPosition border inPending" [ngClass]="{'isPendingClicked': isActive[1]}" (click)="onDivClick(1)" (click)="filterSelection.emit('pending')">
+        <p class="removeMargin  bold  nameOfFilters verticalCenter padding-small-left color-orange"> U obradi</p>
+        <div class="iconDiv horisontalCenter  verticalCenter ">
+            <button class="iconOfTicket spinner "><i class="fa fa-spinner" aria-hidden="true"></i></button>
+        </div>
+    </div>
+    <div class="rowPosition border approved" [ngClass]="{'isApprovedClicked': isActive[2]}" (click)="onDivClick(2)"  (click)="filterSelection.emit('approved')">
+        <p class="removeMargin  bold  nameOfFilters verticalCenter padding-small-left color-green"> Odobreno</p>
+        <div class="iconDiv horisontalCenter  verticalCenter">
+            <button class="iconOfTicket check"><i class="fa fa-check" aria-hidden="true"></i></button>
+        </div>
+    </div>
+    <div class="rowPosition border denied" [ngClass]="{'isDeniedClicked': isActive[3]}" (click)="onDivClick(3)" (click)="filterSelection.emit('denied')">
+        <p class="removeMargin  bold  nameOfFilters verticalCenter padding-small-left color-red"> Odbijeno</p>
+        <div class="iconDiv horisontalCenter  verticalCenter">
+            <button class="iconOfTicket times"><i class="fa fa-times" aria-hidden="true"></i></button>
+        </div>
+    </div>
+</div>

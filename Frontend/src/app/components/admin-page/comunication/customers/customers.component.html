@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="customer-list" >
+      <!--  <div class="search-input">
+            <mat-form-field>
+                <input [formControl]="searchControl" matInput placeholder="Search for customers..." />
+            </mat-form-field>
+        </div>-->
+        <div *ngFor="let customer of filteredCustomers" (click)="onSelect(customer)">
+            
+            <div class="rowPosition verticalCenter gap-small fullHeight cardForCustomers">
+                <div class="iconDiv horisontalCenter  verticalCenter">
+               
+                    <div  class="iconOfTicket "   
+                    [ngClass]="{'denied': assignLetter(customer.ticket) === 'fa fa-times',
+                                'check': assignLetter(customer.ticket) === 'fa fa-check',
+                                'question': assignLetter(customer.ticket) === 'fa fa-question',
+                                'arrow': assignLetter(customer.ticket) === 'fa fa-arrow-right',
+                                'spinner': assignLetter(customer.ticket) === 'fa fa-spinner'}">
+                        <i [class]="'fa ' + assignLetter(customer.ticket)" aria-hidden="true" class="icons verticalCenter horisontalCenter"></i>
+                    </div>
+                </div>
+                <div class="IDDiv horisontalCenter">
+                    <p class="removeMargin changingColor"> {{customer.id}}</p>
+                </div>
+                <div class="SubjectDiv ">
+                    <p class="removeMargin changingColor">{{customer.subject}}</p>
+                </div>
+                <div class="CustomerDiv ">
+                    <p class="removeMargin changingColor">{{customer.name}} {{customer.surname}}</p>
+                </div>
+                <div class="TicketDiv horisontalCenter">
+                    <p class="removeMargin changingColor">{{customer.ticket}}</p>
+                </div>
+                <div class="RequestedDiv horisontalCenter">
+                    <p class="removeMargin changingColor">{{customer.requestedTime}}</p>
+                </div>
+            </div>
+           
+        </div>
+       
+    </div>
+    
+</div>

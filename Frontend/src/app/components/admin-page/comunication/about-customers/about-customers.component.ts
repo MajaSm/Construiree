@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Customers } from '../customers';
+import { Customers } from '../customers.model';
 
 @Component({
   selector: 'app-about-customers',

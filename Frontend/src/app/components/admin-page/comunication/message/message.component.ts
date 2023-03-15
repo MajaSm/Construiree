@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { Customers } from '../customers';
+import { Customers } from '../customers.model';
 
 @Component({
   selector: 'app-message',
@@ -10,9 +10,31 @@ import { Customers } from '../customers';
 export class MessageComponent {
   @Input() customer!: Customers;
   @Output() backClicked = new EventEmitter<void>();
-  
+  message: string = '';
+  messageInput: any;
+  isMessageEmpty: string=''
+  messageInputValue: any;
+
   onBackClicked() {
     this.backClicked.emit();
   }
   
+  isDisabled(): boolean {
+    
+    return !this.messageInputValue;
+  }
+  sendMessage(text: string) {
+    const now = new Date();
+    const formattedDate = now.toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: 'numeric',
+      year: 'numeric'
+    }).split('/').join('.');
+    const senderName = 'You'; // assume sender is always the user
+    const time = now.toLocaleTimeString();
+    this.customer.messageFromAdmin.push({ senderName, time, text, formattedDate });
+    this.messageInputValue = false;
+    this.messageInputValue =''
+    return this.messageInput === '';
+  }
 }

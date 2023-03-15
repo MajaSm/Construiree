@@ -22,6 +22,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { FiltersComponent } from './components/admin-page/comunication/filters/filters.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { AutosizeModule } from 'ngx-autosize';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,13 +46,16 @@ import { FiltersComponent } from './components/admin-page/comunication/filters/f
   ],
   imports: [
     BrowserModule,
+    Ng2SearchPipeModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    AutosizeModule
+    
     
   ],
   providers: [],

@@ -1,13 +1,12 @@
 import { Component, Input, ViewChild } from '@angular/core';
-import { SearchService } from 'src/app/components/shared/search.service';
-import { Customers } from '../customers';
+import { Customers } from '../customers.model';
 import { FiltersComponent } from '../filters/filters.component';
 
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.scss'],
-  providers: [SearchService]
+  providers: []
 })
 export class ChatComponent {
   @Input() customers!:Customers;
@@ -15,7 +14,11 @@ export class ChatComponent {
   clickedOnCustomer=false;
   filterSelected!:any;
   selectedFilterIndex!: number;
-
+   searchText:any;
+   searchQuery: string = '';
+   onSearchText(query: string) {
+    this.searchQuery = query;
+  }
   onFilterSelected(filter: string, index:number) {  
     this.filterSelected = filter
     this.selectedFilterIndex = index;

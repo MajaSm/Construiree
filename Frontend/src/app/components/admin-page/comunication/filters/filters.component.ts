@@ -1,6 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { SearchService } from 'src/app/components/shared/search.service';
-import { Customers } from '../customers';
+import { Customers } from '../customers.model';
+import { Observable, of } from 'rxjs';
+import { startWith } from 'rxjs/operators';
+import { debounceTime } from 'rxjs/operators';
+import { distinctUntilChanged } from 'rxjs/operators';
+import { switchMap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 @Component({
   selector: 'app-filters',
   templateUrl: './filters.component.html',
@@ -10,13 +16,18 @@ export class FiltersComponent {
 @Input() customer!: Customers
 @Input() selectedIndex?: number;
 @Output() filterSelection = new EventEmitter<string>();
+@Output() searchText = new EventEmitter<string>();
 isActive: boolean[] = [false, false, false, false];
-
-filteredCustomers!: Customers[];
-constructor(public searchService: SearchService, ) { }
+searchQuery: string = '';
 
 
+constructor() { }
+search() {
+  this.searchText.emit(this.searchQuery);
+}
 resetFilter() {
+  this.searchQuery='';
+  this.searchText.emit(this.searchQuery);
   this.isActive = Array(4).fill(false);
 }
 

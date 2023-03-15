@@ -9,7 +9,7 @@
    
         
 </div>
-<input type="text" placeholder="Search customers">
+<input type="text" placeholder="Pretrazi..." class="searchInput" [(ngModel)]="searchQuery" (input)="search()"autocomplete="off">
 <div class="columnPosition ">
     <div class="rowPosition border newRequest"[ngClass]="{'isNewRequestClicked': isActive[0] } " (click)="onDivClick(0)" (click)="filterSelection.emit('newRequest')">
         <p class="removeMargin bold   nameOfFilters verticalCenter padding-small-left color-blue"> Novi Zahtjev</p>

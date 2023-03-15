@@ -7,21 +7,38 @@
     display: flex;
     flex-direction: column;
 }
-
+.gap-xs{
+    gap: 1rem;
+}
 .gap-small{
     gap: 2rem;
+}
+.margin-bottom-small{
+    margin-bottom: 1rem;
 }
 .margin-small{
     margin: 1rem;
 }
-.margin-bottom-small{
-    margin-bottom: 2rem;
+.margin-bottom-xs{
+    margin-bottom: 1rem;
+}
+.margin-top-xs{
+    margin-bottom: 1rem;
+}
+.margin-top-xs{
+    margin-bottom: 1rem;
+}
+.margin-right-small{
+    margin-right: 2rem;
 }
 .left-padding{
     padding-left: 1rem;
 }
 .padding-small-left{
     padding-left: 1rem;
+}
+.padding-small-right{
+    padding-right: 1rem;
 }
 .padding-small{
     padding: 1rem;

@@ -1,103 +1,80 @@
-<!--<div class="center">
-    <div class="card ">
-        <div class="card-head">
-            <h5>Open Converstions</h5>
-        </div>
-        <div class="card-body border" *ngFor="let customer of customers">
-            <p>
-                {{customer.name}} {{customer.surname}}
-            </p>
-        </div>
-    </div>
-</div>-->
-<!--<div class="container"    *ngIf="customer" >
+
     
-    <div class="messages" >
-        <div class="messagesContainer">
-           
-            <div  class="messages-inner-body columnPosition">
-                <div class="navBar">
-                    <div class="buttons">
-                        <button class="button circleButton " (click)="onBackClicked()"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
-                    </div>
+ <div class="container columnPosition"  *ngIf="customer" >
+
+        <div class="navBar">
+            <div class="buttons">
+                <button class="button circleButton " (click)="onBackClicked()"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+            </div>
+        </div>
+
+    
+
+
+        <div class="rowPosition gap-small">
+
+            <app-about-customers style="width:50%" [customer] ="customer" ></app-about-customers>
+
+            <div class="chat margin-small">
+                <div class="message columnPosition">
+                    <div class="messageTab" >
                     
-                </div>
-                <div class="rowPosition">
-                    <div class="">
-                        <div class="message">
-                            <div class="chat">
-                                <div *ngFor="let message of customer.message" >
-                                    <p>{{ message }}</p>
+                            <div class="columnPosition">
+                                <div class="rowPosition margin-bottom-xs">
+                                    <div class="userInitials " id="colorOfUserInitials" [style.background-color]="customer.color">{{ customer.name.substring(0, 1) }}</div>
+                                    <div class="columnPosition gap-xs">
+                                        <div class="rowPosition gap-xs">
+                                            <p class="bold ">{{customer.wholeName}} </p>
+                                            <p>|</p>
+                                            <p>{{customer.requestedTime}}</p>
+                                        </div>
+                                        <div class="divTextMessage">
+                                            <textarea autosize class="messagesBox" >{{ customer.message }}</textarea>
+                                        </div>
+                                    </div>
                                 </div>
-                                
+                                <div class="columnPosition margin-top-xs" *ngFor="let msg of customer.messageFromAdmin">
+                                    <div class="rowPosition">
+                                        <div class="userInitialsForAdmin " >Y</div>
+                                        <div class="columnPosition gap-xs " >
+                                            <div class="rowPosition gap-xs">
+                                            <p class="bold">{{ msg.senderName }}</p>
+                                            <p >|</p>
+                                            <p>{{msg.formattedDate}} {{ msg.time }} </p>
+                                            </div>
+                                            <div class="divTextMessage">
+
+                                                <textarea autosize class="messagesBox">{{ msg.text }}</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
                             </div>
-                            
-                        </div>
-                        
-                        <div class="buttonAndTextarea rowPosition">
-                            <textarea class="textarea" placeholder="Type a message..."></textarea>
-                            <div class="divButtonSend">
-                                <button class="buttonSend">
-                                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                                
-                        </div>
-                    </div>
-
-                </div>
-                <div class="about-customer">
-                
-                </div>
-                
-                
-            </div>
-            
-            
-        </div>
-
-
-
-    </div>
-</div>-->
-<div class="container"    *ngIf="customer" >
-
-    <div class="navBar">
-        <div class="buttons">
-            <button class="button circleButton " (click)="onBackClicked()"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
-    </div>
-
-   
-
-
-    <div class="rowPosition gap-small">
-
-        <app-about-customers style="width:50%" [customer] ="customer" ></app-about-customers>
-
-        <div class="chat margin-small">
-            <div class="message columnPosition">
-                <div *ngFor="let message of customer.message" >
-                    <p>{{ message }}</p>
-                </div>
-            </div>
-            <div class="buttonAndTextarea rowPosition">
-                <textarea class="textarea" placeholder="Type a message..."></textarea>
-                <div class="divButtonSend">
-                    <button class="buttonSend">
-                        <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                    </button>
-                </div>
                     
+                    
+                    
+                    </div>
+                </div>
+                <div class="buttonAndTextarea rowPosition">
+                    <textarea   class="textarea" placeholder="Napisite poruku..."  #messageInput [(ngModel)]="messageInputValue" (change)="isDisabled()" (keyup)="isDisabled()"></textarea>
+                    <div class="divButtonSend">
+                        <button class="buttonSend" [ngClass]="{'disabled-button': isDisabled()}" [disabled]="isDisabled()" (click)="sendMessage(messageInput.value); messageInput.value=''">
+                            <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                        
+                </div>
             </div>
+            
+        
+        
+    
+        
+            
+            
+            
         </div>
-          
-     
-       
-   
-       
-        
-         
-        
-    </div>
 
-</div>
+    </div>
+    

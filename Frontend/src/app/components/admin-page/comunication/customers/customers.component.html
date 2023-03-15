@@ -5,7 +5,7 @@
                 <input [formControl]="searchControl" matInput placeholder="Search for customers..." />
             </mat-form-field>
         </div>-->
-        <div *ngFor="let customer of filteredCustomers" (click)="onSelect(customer)">
+        <div *ngFor="let customer of filteredCustomers  | filter:searchQuery" (click)="onSelect(customer)">
             
             <div class="rowPosition verticalCenter gap-small fullHeight cardForCustomers">
                 <div class="iconDiv horisontalCenter  verticalCenter">
@@ -26,7 +26,7 @@
                     <p class="removeMargin changingColor">{{customer.subject}}</p>
                 </div>
                 <div class="CustomerDiv ">
-                    <p class="removeMargin changingColor">{{customer.name}} {{customer.surname}}</p>
+                    <p class="removeMargin changingColor">{{customer.wholeName}}</p>
                 </div>
                 <div class="TicketDiv horisontalCenter">
                     <p class="removeMargin changingColor">{{customer.ticket}}</p>

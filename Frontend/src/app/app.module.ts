@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BodyComponent } from './components/admin-page/body/body.component';
 import { StatisticsComponent } from './components/admin-page/statistics/statistics.component';
-import { TasksComponent } from './components/admin-page/tasks/tasks.component';
 import { SettingsComponent } from './components/admin-page/settings/settings.component';
 import { DashboardComponent } from './components/admin-page/dashboard/dashboard.component';
 import { NavigationComponent } from './components/admin-page/navigation/navigation.component';
@@ -24,12 +23,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { FiltersComponent } from './components/admin-page/comunication/filters/filters.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AutosizeModule } from 'ngx-autosize';
+
+
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { FlatpickrModule } from 'angularx-flatpickr';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     BodyComponent,
     StatisticsComponent,
-    TasksComponent,
     SettingsComponent,
     DashboardComponent,
     NavigationComponent,
@@ -46,17 +51,23 @@ import { AutosizeModule } from 'ngx-autosize';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     Ng2SearchPipeModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatInputModule,
-    HttpClientModule,
-    AutosizeModule
+    MatInputModule, 
+    AutosizeModule,
+    FlatpickrModule.forRoot(),
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
     
-    
+   
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

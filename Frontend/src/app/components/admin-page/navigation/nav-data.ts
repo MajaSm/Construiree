@@ -10,9 +10,9 @@ export const navbarData = [
     label: 'Statistics'
     },
     {
-    routeLink:'tasks',
+    routeLink:'calendar',
     icon: 'fal fa-pencil-square-o',
-    label: 'Tasks'
+    label: 'Calendar'
     },
     {
     routeLink:'settings',

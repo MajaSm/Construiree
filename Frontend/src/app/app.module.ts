@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 //import { NgToastModule } from 'ng-angular-popup';
 import { AppRoutingModule } from './app-routing.module';
@@ -25,11 +26,16 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AutosizeModule } from 'ngx-autosize';
 
 
-import { CalendarModule, DateAdapter } from 'angular-calendar';
-import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
-import { FlatpickrModule } from 'angularx-flatpickr';
-
-
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { CalendarComponent } from './components/admin-page/calendar/calendar.component';
+import { AddEventDialogComponent } from './components/admin-page/add-event-dialog/add-event-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
+import { NgbTimepickerModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,25 +52,38 @@ import { FlatpickrModule } from 'angularx-flatpickr';
     MessageComponent,
     ChatComponent,
     FiltersComponent,
+    CalendarComponent,
+    AddEventDialogComponent,
+    
+    
     
    
   ],
   imports: [
+
     BrowserModule,
-    HttpClientModule,
-    Ng2SearchPipeModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
+    
     FormsModule,
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule, 
     AutosizeModule,
-    FlatpickrModule.forRoot(),
-    CalendarModule.forRoot({
-      provide: DateAdapter,
-      useFactory: adapterFactory,
-    }),
+    CommonModule,
+    HttpClientModule,
+    Ng2SearchPipeModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    FullCalendarModule,
+    MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    NgxMaterialTimepickerModule,
+    MatCheckboxModule,
+    NgxMatTimepickerModule,
+    NgbTimepickerModule,
+    
+    
+    
     
    
   

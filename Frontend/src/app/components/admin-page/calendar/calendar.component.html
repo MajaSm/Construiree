@@ -1,1 +1,14 @@
-<h1>Kalendar</h1>
+<div id='calendar-container'>
+  <button mat-raised-button color="primary" (click)="openAddEventDialog()">Add event</button>
+  <full-calendar
+  [options]="calendarOptions"
+  
+>
+<ng-container *ngFor="let event of events">
+  <b>{{ event.time }} {{ event.title }}</b>
+</ng-container>
+</full-calendar>
+<app-add-event-dialog (addEvent)="onAddEvent($event)"></app-add-event-dialog>
+
+
+</div>

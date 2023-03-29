@@ -21,6 +21,8 @@ export const CUSTOMERS: Customers[]  = [
       dateForDelivery: '03.05.2023.',
       address:'Random 35A, Zagreb 10000',
       color:'',
+      materials:'beton',
+      count:'2',
     },
     {
       name: 'Annalise',
@@ -43,7 +45,9 @@ export const CUSTOMERS: Customers[]  = [
       letter:'',
       dateForDelivery: '03.05.2023.',
       address:'Random 35A, Zagreb 10000',
-      color:'',
+      color:'', 
+      materials:'beton',
+      count:'2',
     }
     ,
     {
@@ -68,6 +72,8 @@ export const CUSTOMERS: Customers[]  = [
       dateForDelivery: '03.05.2023.',
       address:'Random 35A, Zagreb 10000',
       color:'',
+      materials:'beton',
+      count:'2',
     }
     ,
     {
@@ -92,6 +98,8 @@ export const CUSTOMERS: Customers[]  = [
       dateForDelivery: '03.05.2023.',
       address:'Random 35A, Zagreb 10000',
       color:'',
+      materials:'beton',
+      count:'2',
     }
     ,
     {
@@ -116,6 +124,8 @@ export const CUSTOMERS: Customers[]  = [
       dateForDelivery: '03.05.2023.',
       address:'Random 35A, Zagreb 10000',
       color:'',
+      materials:'beton',
+      count:'2',
     }
     ,
     {
@@ -140,6 +150,8 @@ export const CUSTOMERS: Customers[]  = [
       dateForDelivery: '03.05.2023.',
       address:'Random 35A, Zagreb 10000',
       color:'',
+      materials:'beton',
+      count:'2',
     }
     ,
     {
@@ -164,6 +176,8 @@ export const CUSTOMERS: Customers[]  = [
       dateForDelivery: '03.05.2023.',
       address:'Random 35A, Zagreb 10000',
       color:'',
+      materials:'beton',
+      count:'2',
     }
     ,
     {
@@ -188,6 +202,8 @@ export const CUSTOMERS: Customers[]  = [
       dateForDelivery: '03.05.2023.',
       address:'Random 35A, Zagreb 10000',
       color:'',
+      materials:'beton',
+      count:'2',
     }
     ,
     {
@@ -212,6 +228,8 @@ export const CUSTOMERS: Customers[]  = [
       dateForDelivery: '03.05.2023.',
       address:'Random 35A, Zagreb 10000',
       color:'',
+      materials:'beton',
+      count:'2',
     }
     ,
     {
@@ -233,7 +251,9 @@ export const CUSTOMERS: Customers[]  = [
       letter:'',
       dateForDelivery: '03.05.2023.',
       address:'Random 35A, Zagreb 10000',
-      color: ''
+      color: '',
+      materials:'beton',
+      count:'2',
     }
     
   ]

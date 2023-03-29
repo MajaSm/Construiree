@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 //import { NgToastModule } from 'ng-angular-popup';
@@ -30,12 +30,16 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import { CalendarComponent } from './components/admin-page/calendar/calendar.component';
 import { AddEventDialogComponent } from './components/admin-page/add-event-dialog/add-event-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDatepickerIntl, MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
+import { NgxMatTimepickerModule, } from 'ngx-mat-timepicker';
 import { NgbTimepickerModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { registerLocaleData } from '@angular/common';
+import localeHr from '@angular/common/locales/hr';
+registerLocaleData(localeHr);
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +58,6 @@ import { NgbTimepickerModule } from '@ng-bootstrap/ng-bootstrap';
     FiltersComponent,
     CalendarComponent,
     AddEventDialogComponent,
-    
     
     
    
@@ -81,14 +84,14 @@ import { NgbTimepickerModule } from '@ng-bootstrap/ng-bootstrap';
     MatCheckboxModule,
     NgxMatTimepickerModule,
     NgbTimepickerModule,
-    
+    MatTooltipModule
     
     
     
    
   
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'hr' } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -43,6 +43,12 @@
             <div class="rowPosition">
                 <p class="bold">Narudžba za datum:</p><p class="left-padding">{{customer.dateForDelivery}}</p>
             </div>
+            <div class="rowPosition">
+                <p class="bold">Materijal:</p><p class="left-padding">{{customer.materials}}</p>
+            </div>
+            <div class="rowPosition">
+                <p class="bold">Kolicina:</p><p class="left-padding">{{customer.count}}</p>
+            </div>
             <ul class="progressbar">
                 <li [ngClass]="{'active': isActive[0] }" (click)="onClickTracking(0)" >Odobreno</li>
                 <li [ngClass]="{'active': isActive[1] }" (click)="onClickTracking(1)" >Priprema</li>

@@ -1,86 +1,91 @@
-import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, EventEmitter, Inject, Output, ViewChild } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { EventInput } from '@fullcalendar/core';
 import { EventModel } from '../event.model';
 import * as moment from 'moment';
 import { MatCheckbox } from '@angular/material/checkbox';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { end } from '@popperjs/core';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { DateFilterFn, MatCalendarCellCssClasses, MatDatepicker, MatDatepickerInputEvent } from '@angular/material/datepicker';
+import { ValidatorFn } from '@angular/forms';
 @Component({
   selector: 'app-add-event-dialog',
   templateUrl: './add-event-dialog.component.html',
-  styleUrls: ['./add-event-dialog.component.scss']
+  styleUrls: ['./add-event-dialog.component.scss'],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'hr-HR' }]
 })
 export class AddEventDialogComponent {
-  @Output() addEvent: EventEmitter<EventModel> = new EventEmitter();
+  @Output() addEvent = new EventEmitter<any>(); // <-- define the event emitter
+@Output() closeDialog: EventEmitter<any> = new EventEmitter(); 
+
+@ViewChild('picker') picker!: MatDatepicker<Date>;
+
 
   @ViewChild(MatCheckbox) allDayCheckbox!: MatCheckbox;
+ 
+  formIsValid?  = false;
   eventForm: FormGroup;
   timepicker: any;
-  events!: EventModel[];
+  events!: Event[];
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    public dialogRef: MatDialogRef<AddEventDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) {
     this.eventForm = this.fb.group({
       title: ['', Validators.required],
       start: ['', Validators.required],
-      end: ['', Validators.required],
+      end: [''],
       allDay: [false],
-      time: ['']
+      time: ['', Validators.required],
+      endTime:[''],
     });
   }
-  openTimepicker(): void {
-    const dialogRef = this.timepicker.open();
-    dialogRef.afterClosed().subscribe((selectedTime: string) => {
-      if (selectedTime) {
-        this.eventForm.get('time')!.setValue(selectedTime);
-      }
-    });
+
+  weekendsDateFilter: DateFilterFn<Date | null> = (date: Date | null) => {
+    if (!date) {
+      return false;
+    }
+    const day = date.getDay();
+    return day !== 0 ;
+  };
+  updateFormValidity() {
+    const titleValid = this.eventForm.get('title')?.valid;
+    const timeValid = this.eventForm.get('time')?.valid; 
+    const startValid = this.eventForm.get('start')?.valid;
+
+    console.log('titleValid:', titleValid);
+    console.log('timeValid:', timeValid);
+    console.log('rangeValid:', startValid);
+
+    if (titleValid && timeValid && startValid) {
+      this.formIsValid = true;
+    } else {
+      this.formIsValid = false;
+    }
+  
   }
- 
+
+ngOnInit() {
+    this.eventForm.valueChanges.subscribe(() => {
+        this.updateFormValidity();
+    });
+}
+
+  onClose(): void {
+    this.dialogRef.close();
+    this.closeDialog.emit(); // Emit the closeDialog event
+  }
   onSubmit() {
-    // Get form input values
-    const title = this.eventForm.value.title;
-    const startDate = this.eventForm.value.start;
-    const endDate = this.eventForm.value.end;
-    const allDay = this.eventForm.value.allDay;
-    const time = this.eventForm.value.time;
-  
-    // Set start date with time if time is available, otherwise set it to start of day
-    let start = new Date(startDate);
-    if (time) {
-      const [hours, minutes] = time.split(':');
-      start.setHours(hours);
-      start.setMinutes(minutes);
-    } else {
-      start = new Date(start.getFullYear(), start.getMonth(), start.getDate());
+    if (this.eventForm.valid) {
+      console.log(this.eventForm)
+      this.addEvent.emit(this.eventForm.value); 
+      this.onClose()// <-- emit the event with the form data
     }
-  
-    // Set end date with time if time is available, otherwise set it to end of day
-    let end = new Date(endDate);
-    if (time) {
-      const [hours, minutes] = time.split(':');
-      end.setHours(hours);
-      end.setMinutes(minutes);
-    } else {
-      end = new Date(end.getFullYear(), end.getMonth(), end.getDate(), 23, 59, 59);
-    }
-  
-    // Create new event object
-    const newEvent: EventModel = {
-      title: title,
-      start: start,
-      end: end,
-      allDay: allDay,
-      color: 'purple'
-    };
-  
-    // Add new event to events array
-    this.events.push(newEvent);
-  
-    // Reset form
-    this.eventForm.reset();
   }
-  
-  
-  
+
+ 
 }
 
 

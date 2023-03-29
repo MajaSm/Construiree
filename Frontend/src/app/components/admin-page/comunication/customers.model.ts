@@ -16,8 +16,10 @@ export class Customers {
     dateForDelivery: string
     address:string;
     color: string;
+    materials: string;
+    count:string;
     
-    constructor(name: string, surname: string,wholeName:string, email: string,color:string, phone: string, message:any,messageFromAdmin:any , subject: string,ticket: string, requestedTime: string,id: string,dateForDelivery:string, address:string) {
+    constructor(name: string, surname: string,wholeName:string, email: string,color:string, phone: string, message:any,messageFromAdmin:any , subject: string,ticket: string, requestedTime: string,id: string,dateForDelivery:string, address:string, materials: string,count:string) {
         this.name = name;
         this.surname = surname;
         this.email = email;
@@ -32,7 +34,9 @@ export class Customers {
         this.wholeName =wholeName;
         this.messageFromAdmin = messageFromAdmin;
      //   this.color = this.getRandomColor()
-        this.color= color
+        this.color= color;
+        this.materials = materials;
+        this.count = count;
     }
    
   }

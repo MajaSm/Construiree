@@ -1,8 +1,93 @@
-.event{
+
+.event {
+    position: fixed;
+    width: 361px;
+    height: 630px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
+  .form{
+    padding: 2rem;
+  }
+.timePicker{
     display: flex;
     align-items: center;
     justify-content: center;
-    height:300px;
-    width: 200px;
-    margin-left: 50rem;
+    margin-top: 0 !important;
+    
+}
+
+.mat-mdc-form-field:not(.mat-form-field-no-animations) .mdc-text-field__input{
+    margin-top: 0.6rem;
+    height: 25px;
+}
+
+.disabled-button {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.divButtonX{
+  width: 100%;
+display: flex;
+justify-content: flex-end;
+}
+.buttonX{
+  width: 30px;
+  height: 30px;
+  margin: 0.5rem;
+  border-color: gray;
+  background-color: white;
+  border-width: 1px;
+  border-radius: 10px;
+}
+
+.paragraphInsideForm{
+  color: gray;
+}
+.wrap {
+  margin-top: 0.5rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+.button:hover {
+  background-color:var(--primary-color) ;
+  box-shadow: 0px 15px 20px #d37f52;
+  color: #fff;
+  transform: translateY(-7px);
+}
+.button:disabled:hover {
+  
+  opacity: 0.6; /* set the opacity of the button when disabled */
+  cursor: not-allowed; /* set the cursor to not-allowed when disabled */
+  /* add any additional styles you want to apply to the disabled button */
+}
+
+.custom-sunday .mat-calendar-body-cell-content {
+  color: red;
 }

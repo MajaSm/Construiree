@@ -2,7 +2,7 @@
 .event {
     position: fixed;
     width: 361px;
-    height: 630px;
+    height: 450px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -85,9 +85,5 @@ justify-content: flex-end;
   
   opacity: 0.6; /* set the opacity of the button when disabled */
   cursor: not-allowed; /* set the cursor to not-allowed when disabled */
-  /* add any additional styles you want to apply to the disabled button */
 }
 
-.custom-sunday .mat-calendar-body-cell-content {
-  color: red;
-}

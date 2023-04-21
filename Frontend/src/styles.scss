@@ -8,7 +8,9 @@
 @import './styles/scrollbar.scss';
 @import './styles/my-custom-theme.scss';
 @import './styles/calendar-theme.scss';
-@import "../node_modules/angular-calendar/css/angular-calendar.css";
-/* Importing Bootstrap SCSS file. */
-@import 'bootstrap/scss/bootstrap';
-  
+@import './styles/tooltip.scss';
+@import 'tippy.js/dist/tippy.css';
+@import 'tippy.js/themes/light.css';
+@import 'tippy.js/dist/border.css';
+@import 'tippy.js/dist/backdrop.css';
+@import 'tippy.js/animations/shift-away.css';

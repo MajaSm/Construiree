@@ -1,34 +1,34 @@
 import { Component, EventEmitter, Inject, Output, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { EventInput } from '@fullcalendar/core';
-import { EventModel } from '../event.model';
-import * as moment from 'moment';
 import { MatCheckbox } from '@angular/material/checkbox';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { end } from '@popperjs/core';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
-import { DateFilterFn, MatCalendarCellCssClasses, MatDatepicker, MatDatepickerInputEvent } from '@angular/material/datepicker';
-import { ValidatorFn } from '@angular/forms';
+import { DateFilterFn, MatDatepicker } from '@angular/material/datepicker';
+
+import { NativeDateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';
+import { CustomDateAdapter } from 'src/app/components/admin-page/custom-date-adapter';
 @Component({
   selector: 'app-add-event-dialog',
   templateUrl: './add-event-dialog.component.html',
   styleUrls: ['./add-event-dialog.component.scss'],
-  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'hr-HR' }]
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'hr-HR' },
+   ]
 })
+
 export class AddEventDialogComponent {
+
   @Output() addEvent = new EventEmitter<any>(); // <-- define the event emitter
-@Output() closeDialog: EventEmitter<any> = new EventEmitter(); 
+  @Output() closeDialog: EventEmitter<any> = new EventEmitter(); 
 
-@ViewChild('picker') picker!: MatDatepicker<Date>;
-
-
+  @ViewChild('picker') picker!: MatDatepicker<Date>;
   @ViewChild(MatCheckbox) allDayCheckbox!: MatCheckbox;
  
   formIsValid?  = false;
   eventForm: FormGroup;
   timepicker: any;
   events!: Event[];
-
+  
   constructor(
     private fb: FormBuilder,
     public dialogRef: MatDialogRef<AddEventDialogComponent>,
@@ -49,15 +49,13 @@ export class AddEventDialogComponent {
     }
     const day = date.getDay();
     return day !== 0 ;
-  };
+  }
+
   updateFormValidity() {
     const titleValid = this.eventForm.get('title')?.valid;
     const timeValid = this.eventForm.get('time')?.valid; 
     const startValid = this.eventForm.get('start')?.valid;
 
-    console.log('titleValid:', titleValid);
-    console.log('timeValid:', timeValid);
-    console.log('rangeValid:', startValid);
 
     if (titleValid && timeValid && startValid) {
       this.formIsValid = true;

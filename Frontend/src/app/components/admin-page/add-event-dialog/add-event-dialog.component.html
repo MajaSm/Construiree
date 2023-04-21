@@ -16,20 +16,20 @@
         <mat-datepicker #picker  ></mat-datepicker>
       </mat-form-field> 
       <mat-form-field appearance="outline">
-        <mat-label>Vrijeme od:</mat-label>
+        <mat-label>Vrijeme:</mat-label>
         <input type="time" matInput name="week" min="09:00" max="18:00" formControlName="time" >
      </mat-form-field>
-     <mat-form-field appearance="outline">
+    <!-- <mat-form-field appearance="outline">
       <mat-label>Vrijeme do:</mat-label>
       <input type="time" matInput name="week" min="09:00" max="18:00" formControlName="endTime" >
-   </mat-form-field>
+   </mat-form-field>-->
       <!-- <ngx-mat-timepicker-field color="warn" class="timePicker"
         [format]="24"
         [defaultTime]="'23:11'"
         formControlName="endTime"
         ></ngx-mat-timepicker-field>--> 
-    <p class="paragraphInsideForm">* Obavezna polja</p>
-    <p class="paragraphInsideForm"> <b>"Vrijeme do"</b> se postavlja na <b>1h</b>, ukoliko nije uneseno.</p>
+   <!--<p class="paragraphInsideForm">* Obavezna polja</p>
+    <p class="paragraphInsideForm"> <b>"Vrijeme do"</b> se postavlja na <b>1h</b>, ukoliko nije uneseno.</p>--> 
         <div class="wrap">
           <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="!formIsValid" class="button" disabled>Dodaj dogadaj</button>
         </div>

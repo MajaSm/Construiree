@@ -1,0 +1,16 @@
+<div class="dialog columnPosition center">
+    <p>Jeste li sigurni da želite <b>obrisati</b> narudžbu?</p>
+  <div class="aboutEvent">
+    <p>Naručitelj: <b>{{data.eventApi.extendedProps.name }} {{data.eventApi.extendedProps.surname}}</b></p> 
+    <p>Adresa: <b>{{data.eventApi.extendedProps.address}}</b></p>
+    <p>Vrijeme: <b>{{data.eventApi.extendedProps.time}}h</b></p>
+  </div>
+   
+    <p><b>{{data.eventApi.time}}</b></p>
+    <div class="buttonsCenter ">
+        <button (click)="onClose()" class="deny-button"><i class="fa fa-times" aria-hidden="true"></i></button>
+     
+        <button (click)="onConfirmDelete()" class="approve-button"><i class="fa fa-check" aria-hidden="true"></i></button>
+      </div>
+</div>
+

@@ -18,8 +18,9 @@ export class Customers {
     color: string;
     materials: string;
     count:string;
+    time:string
     
-    constructor(name: string, surname: string,wholeName:string, email: string,color:string, phone: string, message:any,messageFromAdmin:any , subject: string,ticket: string, requestedTime: string,id: string,dateForDelivery:string, address:string, materials: string,count:string) {
+    constructor(name: string, surname: string,wholeName:string, email: string,color:string, phone: string, message:any,messageFromAdmin:any , subject: string,ticket: string, requestedTime: string,id: string,dateForDelivery:string, address:string, materials: string,count:string,time:string) {
         this.name = name;
         this.surname = surname;
         this.email = email;
@@ -37,6 +38,7 @@ export class Customers {
         this.color= color;
         this.materials = materials;
         this.count = count;
+        this.time=time
     }
    
   }

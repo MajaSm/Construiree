@@ -41,6 +41,7 @@ import { registerLocaleData } from '@angular/common';
 import localeHr from '@angular/common/locales/hr';
 import { CustomDateAdapter } from './components/admin-page/custom-date-adapter';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DialogDeleteConfirmationComponent } from './components/admin-page/dialog-delete-confirmation/dialog-delete-confirmation.component';
 registerLocaleData(localeHr);
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ registerLocaleData(localeHr);
     FiltersComponent,
     CalendarComponent,
     AddEventDialogComponent,
+    DialogDeleteConfirmationComponent,
     
     
    

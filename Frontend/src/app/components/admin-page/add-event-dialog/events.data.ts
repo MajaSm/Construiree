@@ -1,15 +1,19 @@
 interface Event {
     
-    title: string;
-    start: Date;
-    end: Date;
-    allDay: boolean;
-    time: string;
-    endTime:string
-    extendedProps: {
-      tooltipContent: string;
-      id: string;
-    }
+  title:string,
+  name: string,
+  surname:string,
+  start: Date,
+  time:Date,
+  material:string,
+  address: string,
+  count:string,
+  id:string,
+  allday:boolean
+  extendedProps: {
+
+    tooltipContent:string,
+  }
   /*  constructor(id: number, title: string, start: Date, end: Date, allDay: boolean, time: string, endTime:string) {
       this.id = id;
       this.title = title;

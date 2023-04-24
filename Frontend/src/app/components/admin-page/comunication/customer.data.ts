@@ -1,6 +1,30 @@
 import { empty } from 'rxjs';
 import { Customers } from './customers.model';
 export const CUSTOMERS: Customers[]  = [
+  {
+    name: 'Milka',
+    surname:'A',
+    wholeName: '',
+    subject: 'New Request',
+    ticket:'U obradi',
+    email: 'john.doe@example.com',
+    phone: '555-555-5555',
+    requestedTime:'25.01.2023',
+    message: [
+      'Sebac'
+    ],
+    messageFromAdmin:[
+      
+    ],
+    id:'0',
+    letter:'',
+    dateForDelivery: '03.05.2023.',
+    time: '11:00',
+    address:'Random 35A, Zagreb 10000',
+    color:'',
+    materials:'beton',
+    count:'2',
+  },
     {
       name: 'Ana',
       surname:'A',
@@ -16,9 +40,10 @@ export const CUSTOMERS: Customers[]  = [
       messageFromAdmin:[
         
       ],
-      id:'#32423',
+      id:'1',
       letter:'',
       dateForDelivery: '03.05.2023.',
+      time: '11:00',
       address:'Random 35A, Zagreb 10000',
       color:'',
       materials:'beton',
@@ -41,9 +66,10 @@ export const CUSTOMERS: Customers[]  = [
       messageFromAdmin:[
         
       ],
-      id:'#32423',
+      id:'2',
       letter:'',
       dateForDelivery: '03.05.2023.',
+      time: '11:00',
       address:'Random 35A, Zagreb 10000',
       color:'', 
       materials:'beton',
@@ -67,9 +93,10 @@ export const CUSTOMERS: Customers[]  = [
       messageFromAdmin:[
         
       ],
-      id:'#32423',
+      id:'3',
       letter:'',
       dateForDelivery: '03.05.2023.',
+      time: '11:00',
       address:'Random 35A, Zagreb 10000',
       color:'',
       materials:'beton',
@@ -93,9 +120,10 @@ export const CUSTOMERS: Customers[]  = [
       messageFromAdmin:[
         
       ],
-      id:'#32423',
+      id:'4',
       letter:'',
       dateForDelivery: '03.05.2023.',
+      time: '11:00',
       address:'Random 35A, Zagreb 10000',
       color:'',
       materials:'beton',
@@ -119,9 +147,10 @@ export const CUSTOMERS: Customers[]  = [
       messageFromAdmin:[
         
       ],
-      id:'#32423',
+      id:'5',
       letter:'',
       dateForDelivery: '03.05.2023.',
+      time: '11:00',
       address:'Random 35A, Zagreb 10000',
       color:'',
       materials:'beton',
@@ -145,9 +174,10 @@ export const CUSTOMERS: Customers[]  = [
       messageFromAdmin:[
         
       ],
-      id:'#32423',
+      id:'6',
       letter:'',
-      dateForDelivery: '03.05.2023.',
+      dateForDelivery: '24.04.2023.',
+      time: '11:00',
       address:'Random 35A, Zagreb 10000',
       color:'',
       materials:'beton',
@@ -171,9 +201,10 @@ export const CUSTOMERS: Customers[]  = [
       messageFromAdmin:[
         
       ],
-      id:'#32423',
+      id:'7',
       letter:'',
       dateForDelivery: '03.05.2023.',
+      time: '11:00',
       address:'Random 35A, Zagreb 10000',
       color:'',
       materials:'beton',
@@ -197,9 +228,10 @@ export const CUSTOMERS: Customers[]  = [
       messageFromAdmin:[
         
       ],
-      id:'#32423',
+      id:'8',
       letter:'',
-      dateForDelivery: '03.05.2023.',
+      dateForDelivery: '24.04.2023.',
+      time: '11:00',
       address:'Random 35A, Zagreb 10000',
       color:'',
       materials:'beton',
@@ -223,9 +255,10 @@ export const CUSTOMERS: Customers[]  = [
       messageFromAdmin:[
         
       ],
-      id:'#5625',
+      id:'9',
       letter:'',
-      dateForDelivery: '03.05.2023.',
+      dateForDelivery: '25.04.2023.',
+      time: '11:00',
       address:'Random 35A, Zagreb 10000',
       color:'',
       materials:'beton',
@@ -247,9 +280,10 @@ export const CUSTOMERS: Customers[]  = [
       messageFromAdmin:[
         
       ],
-      id:'#32423',
+      id:'10',
       letter:'',
-      dateForDelivery: '03.05.2023.',
+      dateForDelivery: '24.04.2023.',
+      time: '11:00',
       address:'Random 35A, Zagreb 10000',
       color: '',
       materials:'beton',

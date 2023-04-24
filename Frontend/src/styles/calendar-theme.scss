@@ -52,34 +52,3 @@ td.fc-list-event-graphic > span{
 
   margin-top: 1.5rem;
  }
-.tooltip-inner button {
-  display: inline-block;
-  margin-right: 5px;
-  padding: 5px 10px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 3px;
-}
-.buttonInEvent{
-  margin-right: 0.1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
-  height: 25px;
-  width: 25px;
-  padding: 0.2rem;
-}
-.buttons{
-  display: flex;
-  width: 100%;
-  align-items: end;
-  justify-content: flex-end;
-}
-.edit-button {
-  color: green;
-}
-.delete-button {
-  color: red;
-}

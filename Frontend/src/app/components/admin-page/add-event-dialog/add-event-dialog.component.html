@@ -1,24 +1,40 @@
 
 <div class="event columnPosition">
   <div class="divButtonX">
-    <button (click)="onClose()" class="buttonX"><i class="fa fa-times" aria-hidden="true"></i></button>
+    <button (click)="onClose()" class="deny-button"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
   
   <form [formGroup]="eventForm" class="columnPosition form" (ngSubmit)="updateFormValidity()">
-      <mat-form-field appearance="outline">
-        <mat-label>Naslov</mat-label>
-        <input matInput type="text" placeholder="Title" formControlName="title" required >
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Datum</mat-label>
-        <input matInput [matDatepicker]="picker" [matDatepickerFilter]="weekendsDateFilter"  formControlName="start" required >
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker  ></mat-datepicker>
-      </mat-form-field> 
-      <mat-form-field appearance="outline">
-        <mat-label>Vrijeme:</mat-label>
-        <input type="time" matInput name="week" min="09:00" max="18:00" formControlName="time" >
-     </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Ime</mat-label>
+      <input matInput type="text" placeholder="Ime" formControlName="name"  required >
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Prezime</mat-label>
+      <input matInput type="text" placeholder="Prezime" formControlName="surname"  required >
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Adresa</mat-label>
+      <input matInput type="text" placeholder="Adresa" formControlName="address"  required >
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Materijal</mat-label>
+      <input matInput type="text" placeholder="Materijal" formControlName="material"  required >
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Kolicina</mat-label>
+      <input matInput type="number" placeholder="Kolicina" formControlName="count"  required >
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Datum</mat-label>
+      <input matInput [matDatepicker]="picker" [matDatepickerFilter]="weekendsDateFilter"  formControlName="start" required >
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker  ></mat-datepicker>
+    </mat-form-field> 
+    <mat-form-field appearance="outline">
+      <mat-label>Vrijeme:</mat-label>
+      <input type="time" matInput name="week"  formControlName="time" required>
+   </mat-form-field>
     <!-- <mat-form-field appearance="outline">
       <mat-label>Vrijeme do:</mat-label>
       <input type="time" matInput name="week" min="09:00" max="18:00" formControlName="endTime" >
@@ -31,7 +47,7 @@
    <!--<p class="paragraphInsideForm">* Obavezna polja</p>
     <p class="paragraphInsideForm"> <b>"Vrijeme do"</b> se postavlja na <b>1h</b>, ukoliko nije uneseno.</p>--> 
         <div class="wrap">
-          <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="!formIsValid" class="button" disabled>Dodaj dogadaj</button>
+          <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="!formIsValid" class="button" >  {{ isEditMode ? 'Spremi promjene' : 'Dodaj narudžbu' }}</button>
         </div>
         
     </form>

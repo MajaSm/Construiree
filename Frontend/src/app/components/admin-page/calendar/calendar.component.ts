@@ -16,6 +16,7 @@ import hrLocale from '@fullcalendar/core/locales/hr';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { data } from 'jquery';
 import { CUSTOMERS } from 'src/app/components/admin-page/comunication/customer.data';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
@@ -67,7 +68,7 @@ export class CalendarComponent implements  OnInit{
     
   ];
   eventIdCounter = CUSTOMERS.length;
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog,private router: Router) { }
   ngOnInit(): void {
     // initialize the calendar instance
     const calendarEl = document.getElementById('calendar');
@@ -78,6 +79,7 @@ export class CalendarComponent implements  OnInit{
       // check if the clicked element is a delete button inside a Tippy
       const deleteButton = event.target as HTMLElement;
       const editButton = event.target as HTMLElement;
+      const chatButton = event.target as HTMLElement;
       if (deleteButton.classList.contains('delete-button') && deleteButton.closest('.tippy-content')) {
         // get the ID of the event from the button's data-event-id attribute
         const eventId = deleteButton.getAttribute('data-event-id')!;
@@ -90,6 +92,12 @@ export class CalendarComponent implements  OnInit{
         const eventId = editButton.getAttribute('data-event-id')!;
         // open the dialog and pass the event data as a parameter
         this.openDialogForEdit(eventId);
+      }
+      if (chatButton.classList.contains('chat-button') && chatButton.closest('.tippy-content')) {
+        // get the ID of the event from the button's data-event-id attribute
+        const eventId = chatButton.getAttribute('data-event-id')!;
+        this.openChat(eventId)
+      
       }
     });
     CUSTOMERS.forEach(customer => {
@@ -170,7 +178,7 @@ export class CalendarComponent implements  OnInit{
         const tooltipContent = info.event.extendedProps['tooltipContent'];
         const eventId = info.event['id'];
         const tippyInstance = tippy(info.el, {
-        placement: 'right',
+        placement: 'top',
         allowHTML: true,
         trigger: 'click',
         appendTo: document.body,
@@ -181,23 +189,30 @@ export class CalendarComponent implements  OnInit{
         maxWidth:300,
         content:  `
             ${tooltipContent}
+            <div class='buttonsInTooltip buttons'>
+            <button class="chat-button buttonInEvent" data-event-id=${eventId}><i class="fa fa-comments" aria-hidden="true"></i></button>
             <div class="buttons">
             <button class="delete-button buttonInEvent" data-event-id=${eventId}><i class="fa fa-times" aria-hidden="true"></i></button>
             <button class="edit-button buttonInEvent" data-event-id=${eventId}><i class="fa fa-pencil" aria-hidden="true"></i></button>
-          </div>`,
+            
+          </div>
+            </div>
+            `,
       });
     },
     eventContent: function(info: EventContentArg) {
       return {
         html: `   <div class="event">
           <div class="time">${info.timeText}</div>
-          <div class="title">${info.event.title}</div>
+          <div class="title">${info.event.extendedProps['name']} ${info.event.extendedProps['surname']}</div>
         </div>`,
       };
     },
   };
 
-
+  openChat(ID:string){
+    this.router.navigate(['/chat', ID]);
+  }
    
   removeEventAfterEditing(eventId: string) {
     const eventApi = this.calendar.getEventById(eventId);

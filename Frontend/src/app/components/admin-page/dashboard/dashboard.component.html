@@ -3,8 +3,8 @@
 <div class="rowPosition gap-small ">
     <div class="cardTotalProfit rowPosition bg-color-orange">
         <div class="totalProfit columnPosition ">
-            <p class="font17px removeMargin"> Orders In Pending</p>
-            <h5 class="bold padding-bottom-mid">50 </h5>
+            <p class="font17px removeMargin"> Narudzbe u obradi</p>
+            <h5 class="bold padding-bottom-mid">{{numOfInPendingCustomers}} </h5>
             <p class="font13px removeMargin">+11% From Previous Month</p>
         </div>
         <div class="icons">
@@ -14,8 +14,8 @@
     
     <div class="cardTotalProfit rowPosition bg-color-blue">
         <div class="totalProfit columnPosition ">
-            <p class="font17px removeMargin"> Total Orders</p>
-            <h5 class="bold padding-bottom-mid">180</h5>
+            <p class="font17px removeMargin"> Ukupno narudzba</p>
+            <h5 class="bold padding-bottom-mid">{{numOfTotalOrders}}</h5>
             <p class="font13px removeMargin">+13% From Previous Month</p>
         </div>
         <div class="icons">
@@ -25,8 +25,8 @@
 
     <div class="cardTotalProfit rowPosition bg-color-green">
         <div class="totalProfit columnPosition ">
-            <p class="font17px removeMargin"> Total Completed Orders</p>
-            <h5 class="bold padding-bottom-mid">150</h5>
+            <p class="font17px removeMargin"> Odobrene narudzbe</p>
+            <h5 class="bold padding-bottom-mid">{{numOfApprovedCustomers}}</h5>
             <p class="font13px removeMargin">+15% From Previous Month</p>
         </div>
         <div class="icons">
@@ -36,8 +36,8 @@
 
     <div class="cardTotalProfit rowPosition bg-color-red">
         <div class="totalProfit columnPosition ">
-            <p class="font17px removeMargin"> Orders Denied</p>
-            <h5 class="bold padding-bottom-mid">30</h5>
+            <p class="font17px removeMargin"> Odbijene narudzbe</p>
+            <h5 class="bold padding-bottom-mid">{{numOfDeniedCustomers}}</h5>
             <p class="font13px removeMargin">+20% From Previous Month</p>
         </div>
         <div class="icons">

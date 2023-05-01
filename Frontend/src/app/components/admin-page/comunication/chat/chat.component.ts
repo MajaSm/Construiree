@@ -1,6 +1,7 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Customers } from '../customers.model';
 import { FiltersComponent } from '../filters/filters.component';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-chat',
@@ -8,7 +9,7 @@ import { FiltersComponent } from '../filters/filters.component';
   styleUrls: ['./chat.component.scss'],
   providers: []
 })
-export class ChatComponent {
+export class ChatComponent  {
   @Input() customers!:Customers;
   selectedConversation: any;
   clickedOnCustomer=false;
@@ -16,6 +17,9 @@ export class ChatComponent {
   selectedFilterIndex!: number;
    searchText:any;
    searchQuery: string = '';
+  constructor(private router: Router) { }
+
+  
    onSearchText(query: string) {
     this.searchQuery = query;
   }
@@ -27,7 +31,6 @@ export class ChatComponent {
   onSelectedConversation(customer:any) {
     this.selectedConversation = customer;
     this.clickedOnCustomer=true;
- 
   } 
   onBackClicked() {
     this.clickedOnCustomer = false;

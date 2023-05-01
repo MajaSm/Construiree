@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Customers } from '../customers.model';
-
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-message',
   templateUrl: './message.component.html',
@@ -14,7 +14,9 @@ export class MessageComponent {
   messageInput: any;
   isMessageEmpty: string=''
   messageInputValue: any;
+  constructor(private route: ActivatedRoute) { }
 
+ 
   onBackClicked() {
     this.backClicked.emit();
   }
@@ -30,7 +32,7 @@ export class MessageComponent {
       month: 'numeric',
       year: 'numeric'
     }).split('/').join('.');
-    const senderName = 'You'; // assume sender is always the user
+    const senderName = 'Ti'; // assume sender is always the user
     const time = now.toLocaleTimeString();
     this.customer.messageFromAdmin.push({ senderName, time, text, formattedDate });
     this.messageInputValue = false;

@@ -1,26 +1,31 @@
-import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 import { filterCallback } from 'chart.js/dist/core/core.plugins';
 import { Customers } from '../customers.model';
 import { CUSTOMERS } from '../customer.data';
 import { Observable, of } from 'rxjs';
+import { Router } from '@angular/router';
+import { ShareService } from '../../share.service';
 @Component({
   selector: 'app-customers',
   templateUrl: './customers.component.html',
   styleUrls: ['./customers.component.scss']
 })
 
-export class CustomersComponent {
+export class CustomersComponent implements OnInit{
   @Output() selectedConversation = new EventEmitter<any>();
  @Input() filter:any;
  @Input() searchQuery: string = '';
-  constructor(){}
+ @Output() numberOfTicket = new EventEmitter<number>();
  customers= CUSTOMERS
   filteredCustomers: Customers[] =[];
- 
+  constructor(private router: Router,private shareService: ShareService) {}
+
+
   onFilterSelected(filter: string) {
     switch (filter) {
       case 'newRequest':
          this.filteredCustomers = this.customers.filter(customer => customer.ticket === 'Novi zahtjev');
+         
          break;
         
       case 'pending':
@@ -41,8 +46,8 @@ export class CustomersComponent {
   }
  
   ngOnChanges(changes: SimpleChanges) {
-    this.onFilterSelected(this.filter)
-    
+    this.onFilterSelected(this.filter);
+  
     if (changes['customers']) {
       this.filteredCustomers = this.customers.filter(customer => {
         const fullName = customer.wholeName.toLowerCase().includes(this.searchQuery.toLowerCase());
@@ -99,6 +104,7 @@ export class CustomersComponent {
       }
     });
    
+    
   }
  
     

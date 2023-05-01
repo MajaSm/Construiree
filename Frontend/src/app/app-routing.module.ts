@@ -14,7 +14,8 @@ const routes: Routes = [
   {path: 'settings', component: SettingsComponent},
   {path: 'account', component: UserInfoComponent},
   {path: 'chat', component: ChatComponent},
-  {path: 'calendar', component: CalendarComponent}
+  {path: 'calendar', component: CalendarComponent},
+  { path: 'chat/:customerId', component: MessageComponent }
   
 ];
 

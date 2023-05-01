@@ -5,7 +5,7 @@
                 <input [formControl]="searchControl" matInput placeholder="Search for customers..." />
             </mat-form-field>
         </div>-->
-        <div *ngFor="let customer of filteredCustomers  | filter:searchQuery" (click)="onSelect(customer)">
+        <div *ngFor="let customer of filteredCustomers  | filter:searchQuery" (click)="onSelect(customer)" >
             
             <div class="rowPosition verticalCenter gap-small fullHeight cardForCustomers">
                 <div class="iconDiv horisontalCenter  verticalCenter">
